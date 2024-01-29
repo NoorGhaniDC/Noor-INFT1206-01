@@ -144,19 +144,27 @@
         </a>
 
         <a href="https://addons.mozilla.org/">
-          <img srcset = "originals/firefoxaddons120.png 120w, 
-          firefoxaddons400.png 400w"
+          <img srcset = "originals/firefoxaddons120.jpg 120w,
+          originals/firefoxaddons400.jpg 400w"
           sizes = "(max-width: 500px) 120px, 400px"
           src="originals/firefoxaddons400.jpg" alt = "Firefox Add-Ons">
         </a>
+
         <a href="https://developer.mozilla.org/en-US/">
-          <img>
+          <img src="originals/mdn.svg" alt="Vist the MDN Website">
         </a>
+
         <div class="clearfix"></div>
       </div>
 
       <div class="red-panda">
         <!-- insert picture element -->
+        <picture>
+          <source media = "(max-width: 600px)" srcset="originals/redpanda600.jpg">
+          <source media = "(max-width: 1200px)" srcset="originals/redpanda1200.jpg">
+          <img src = "originals/redpanda1200.jpg"
+          alt = "Red Panda">
+        </picture>
       </div>
 
     </main>
