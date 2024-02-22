@@ -1,5 +1,16 @@
 html {
   font-family: sans-serif;
+  font-style: white;
+  font-size: 18px;
 }
 
+p{
+    width: 200px;
+    margin: auto;
+    padding: 4px;
+    line-height: 200px;
+    text-align: center;
+    background-color: 
+
+}
 /* Your CSS below here */
