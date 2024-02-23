@@ -64,7 +64,7 @@ Found at https://fonts.google.com/specimen/Playfair+Display?stroke=Serif
        url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff2') format('woff2'),
        url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff') format('woff'),
        url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype'),
-       url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.svg') format('svg');
+       url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.svg#playfair_displayregular') format('svg');
   font-weight: normal;
   font-style: normal;
 
@@ -78,7 +78,7 @@ Found at https://fonts.google.com/specimen/Playfair+Display?stroke=Serif
        url('fonts/Glegoo/glegoo-bold-webfont.woff2') format('woff2'),
        url('fonts/Glegoo/glegoo-bold-webfont.woff') format('woff'),
        url('fonts/Glegoo/glegoo-bold-webfont.ttf') format('truetype'),
-       url('fonts/Glegoo/glegoo-bold-demo.html') format('svg');
+       url('fonts/Glegoo/glegoo-bold-webfont.svg#gleegoobold') format('svg');
   font-weight: normal;
   font-style: normal;
 
@@ -89,15 +89,15 @@ html{
 }
 
 body{
-  font-family: 'playfair_displayregular', serif;
+  font-family: 'playfair_displayregular', sans-serif;
   font-size: 1.6rem;
   letter-spacing: 0.05em;
   word-spacing: 0.1em;
 }
 
 h1, h2{
-  font-family: 'gleegoobold', serif;
-  font-weight: 100;
+  font-family: 'gleegoobold', sans-serif;
+  font-weight: 100%;
 }
 
 h1{
