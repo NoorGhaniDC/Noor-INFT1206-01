@@ -58,53 +58,61 @@ Found at https://fonts.google.com/specimen/Playfair+Display?stroke=Serif
 */
 
 @font-face {
-  font-family: 'playfairdisplay';
+  font-family: 'playfair_displayregular';
   src: url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.eot');
-  src: url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.eot#iefix') format('embedded-opentype'),
-  url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff2') format('woff2'),
-  url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff') format('woff'),
-  url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype'),
-  url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.svg#playfairdisplay') format(svg);
+  src: url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff2') format('woff2'),
+       url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.woff') format('woff'),
+       url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype'),
+       url('fonts/Playfair_Display/playfairdisplay-variablefont_wght-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
+
 }
 
 
 @font-face {
-  font-family: 'glegoo';
+  font-family: 'glegoobold';
   src: url('fonts/Glegoo/glegoo-bold-webfont.eot');
-  src: url('fonts/Glegoo/glegoo-bold-webfont.eot#iefix') format('embedded-opentype'),
-  url('fonts/Glegoo/glegoo-bold-webfont.woff2') format('woff2'),
-  url('fonts/Glegoo/glegoo-bold-webfont.woff') format('woff'),
-  url('fonts/Glegoo/glegoo-bold-webfont.ttf') format('truetype'),
-  url('fonts/Glegoo/glegoo-bold-webfont.svg#gleegoo') format('svg');
+  src: url('fonts/Glegoo/glegoo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Glegoo/glegoo-bold-webfont.woff2') format('woff2'),
+       url('fonts/Glegoo/glegoo-bold-webfont.woff') format('woff'),
+       url('fonts/Glegoo/glegoo-bold-webfont.ttf') format('truetype'),
+       url('fonts/Glegoo/glegoo-bold-demo.html') format('svg');
   font-weight: normal;
   font-style: normal;
+
 }
 
-
-
 html{
-  font-family: 'playfairdisplay', serif;
   font-size: 10px;
 }
 
+body{
+  font-family: 'playfair_displayregular', serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+}
+
 h1, h2{
-  font-family: 'gleegoo', sans-serif ;
-  letter-spacing: 2px;
+  font-family: 'gleegoobold', serif;
+  font-weight: 100;
 }
 
 h1{
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 
 h2{
   font-size: 3.2rem;
+  letter-spacing: 0.05em;
 }
 
 section h2 + p{
-  text-indent: 20px;
+  text-indent: 2rem;
 }
 
 p, li{
@@ -117,75 +125,74 @@ p, li{
 /* Link styling */
 
 a{
+  color: #ab4444;
   outline: none;
 }
 
-a[href="http"]{
-  padding-right: 19px;
-  background: ('external-link-52.png') no-repeat 100% 0;
-  background-size: 16px 16px;
+a[href*="http"]{
+  background: url('external-link-52.png') no-repeat 100%;
+  background-size: 1rem;
+  background-position: bottom 0.5rem right;
+  padding-right: 1.2rem;
 }
 
-a:link, a:visited{
-  color: blue;
-}
 
-a:focus, a:visited{
+a:hover,
+a:focus {
+  color:#296797;
   text-decoration: none;
 }
 
 a:active{
-  color:transparent;
-  text-shadow: 0px 0px 1px orange,
-  0px 0px 2px orange, 
-  0px 0px 3px black,
-  0px 0px 4px black;
+  background:#296797;
+  color: white;
+  text-decoration: none;
 }
 
-ul, ol {
-  margin: 1.6rem 0;
+li, p {
+  line-height: 1.5;
 }
 
-ul {
+ul, p {
+  line-height: 1.5;
+}
+
+ul li::marker {
   list-style-type: square;
-}
-
-ol {
-  list-style-type: lower-latin;
 }
 
 /* NAV Menu */
 
 nav ul {
-  padding-left: 0;
-  margin-top: 0.8rem;
+  list-style: none;
+  padding: 0;
 }
 
 
 nav li {
-  list-style-type: none;
-  margin-bottom: 2rem;
-}
-
-
-nav li a {
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  line-height: 3;
   text-align: center;
-  font-size: 2.5rem;
-  border: 1px solid blue;
+  margin-bottom: 1rem;
+}
+
+
+nav a {
+  text-decoration: none;
+  display: block;
+  padding: 1rem;
+  border: 1px solid #ab4444;
+  font-size: 2rem;
 }
 
 
 
-nav li a:focus, nav li a:hover {
-  color:grey;
-  background:blue;
+nav a:focus, 
+nav a:hover {
+  color: #296797;
+  border: 1px solid #296797;
 }
 
 nav li a:active {
-  color:grey;
-  background:black;
+  color:white;
+  background:#296797;
+  border:1px solid #296797;
 }
