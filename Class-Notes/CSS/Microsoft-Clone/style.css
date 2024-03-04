@@ -1,0 +1,127 @@
+img {
+    margin: 0;
+    /* border: 3px solid red; */
+}
+.header {
+    /* border: 4px solid green; */
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 10px 10px;
+}
+.navigation-bar-container {
+    /* border: 2px solid blue; */
+    display: flex;
+    font-size: 10px;
+    justify-content: space-between;
+    flex-basis: 100%;
+    align-items: flex-start;
+}
+.left-navigation-list {
+    /* border: 2px solid black; */
+    display: flex;
+    height: 100%;
+    flex-basis: 50%;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+.right-navigation-list {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-basis: 30%;
+    justify-content: flex-end;
+    margin: 0;
+}
+ul > li, ul > i {
+    list-style-type: none;
+    margin: 0 5px 0 5px;
+}
+ul > li:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.display-container {
+    /* border: 2px solid black; */
+    height: 55vh;
+    display: flex;
+    background-image: url("https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Highlight-Slim-Multi-Canvas-Copilot-001:VP4-1399x600");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.right-display {
+    /* border: 3px solid blue; */
+    width: 55%;
+}
+
+.left-display {
+     /* border: 3px solid red; */
+     width: 45%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.left-display-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 60%;
+}
+
+.left-display-content * {
+    margin: 0;
+    padding:0;
+}
+
+.new-banner {
+    background-color: #ffb900;
+    font-weight: bold;
+    padding: 3px 5px 3px 5px;
+}
+
+.left-display-content > p {
+    font-size: 10px;
+}
+
+.left-display-buttons > button {
+    color: white;
+    background-color: #0067b8;
+    padding: 5px;
+}
+
+.options-container {
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.option {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+
+}
+.option a {
+    font-size: 12px;
+}
+
+.option i {
+    font-size: 24px;
+}
+
+.microsoft-logo {
+    width: auto;
+    height: 2.5vw;
+}
+
+
+
+
