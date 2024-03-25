@@ -1,4 +1,9 @@
 
+	// Name: Noor Ghani
+	// File: main.js
+	// Date: 25 March 2024
+	// Javascript used for Silly Story Generator.
+
 const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
@@ -19,6 +24,7 @@ const insertZ = ["spontaneously combusted","melted into a puddle on the sidewalk
 randomize.addEventListener('click', result);
 
 function result() {
+    let newStory = storyText;
 
   if(customName.value !== '') {
     const name = customName.value;
