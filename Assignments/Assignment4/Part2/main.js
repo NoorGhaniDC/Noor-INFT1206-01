@@ -1,3 +1,14 @@
+/*
+	Name: Noor Ghani
+	File: main.js
+	Date:  01 April 2024
+	An image gallery.
+	*/
+
+
+
+
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
