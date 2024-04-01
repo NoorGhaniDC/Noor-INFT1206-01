@@ -23,6 +23,9 @@ const alts = {
 }
 
 /* Declaring the alternative text for each image file */
+
+
+/* Looping through images */
 for (const image of images){
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `images/${image}`);
@@ -31,10 +34,8 @@ for (const image of images){
     newImage.addEventListener('click', e =>{
         displayedImage.src = e.target.src;
         displayedImage.src = e.target.alt;
-    };
+    });
 }
-
-/* Looping through images */
 
 const newImage = document.createElement('img');
 newImage.setAttribute('src', xxx);
