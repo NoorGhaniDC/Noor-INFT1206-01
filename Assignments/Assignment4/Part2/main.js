@@ -31,7 +31,7 @@ for (const image of images){
     newImage.addEventListener('click', e =>{
         displayedImage.src = e.target.src;
         displayedImage.src = e.target.alt;
-    });
+    };
 }
 
 /* Looping through images */
