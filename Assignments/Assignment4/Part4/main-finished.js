@@ -28,23 +28,23 @@ function shape (x,y,velX, velY, exists)
 }
 
 class Ball extends shape {
-  constructor(x, y, velX, velY, color, size) {
-    this.x = x;
-    this.y = y;
-    this.velX = velX;
-    this.velY = velY;
+  constructor(x, y, velX, velY, exists, color, size) {
+    super(x, y, velX,velY, exists)
     this.color = color;
     this.size = size;
   }
+}
+Ball.prototype = Object.create(Shape.prototype);
+Ball.prototype.constructor = Ball;
 
-  draw() {
+Ball.prototype.draw = function() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
 
-  update() {
+  Ball.prototype.update = function() {
     if (this.x + this.size >= width) {
       this.velX = -Math.abs(this.velX);
     }
@@ -65,7 +65,7 @@ class Ball extends shape {
     this.y += this.velY;
   }
 
-  collisionDetect() {
+Ball.prototype.collisionDetect = function() {
     for (const ball of balls) {
       if (!(this === ball)) {
         const dx = this.x - ball.x;
@@ -75,10 +75,9 @@ class Ball extends shape {
         if (distance < this.size + ball.size) {
           ball.color = this.color = randomRGB();
         }
-      }
+    }
     }
   }
-}
 
 const balls = [];
 
