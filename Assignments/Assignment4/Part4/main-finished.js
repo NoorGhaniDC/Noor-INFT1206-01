@@ -114,6 +114,22 @@ EvilCircle.prototype.checkBounds = function()
   }
 }
 
+EvilCircle.prototype.setControls = function()
+{
+  let _this = this;
+  window.onkeydown = function(e){
+    if (e.key === 'a'){
+      _this.x -= _this.velX;
+    } else if (e.key === 'd'){
+      this.x += _this.velX;
+    } else if (e.key === 'w'){
+      this.y -= _this.velY;
+    } else if (e.key === 's'){
+      this.y += _this.velY
+    }
+  }
+}
+
 
 
 
