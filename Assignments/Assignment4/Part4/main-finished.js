@@ -26,6 +26,7 @@ function shape (x,y,velX, velY, exists)
   this.velY = velY;
   this.exists = exists;
 }
+
 class Ball extends shape {
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
