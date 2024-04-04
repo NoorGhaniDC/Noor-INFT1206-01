@@ -38,6 +38,7 @@ imageFilenames.forEach((imageName) => {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `images/${imageName}`);
     newImage.setAttribute('alt', altText[imageName]);
+    newImage.addEventListener('click', handleImageClick);
     thumbBar.appendChild(newImage);
 });
 
