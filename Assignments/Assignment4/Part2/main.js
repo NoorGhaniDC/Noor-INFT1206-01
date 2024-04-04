@@ -37,3 +37,17 @@ images.forEach((imageName) => {
 });
 
 /* Wiring up the Darken/Lighten button */
+function click(){
+    let switchClass = btn.getAttribute('class');
+    if (switchClass === 'dark'){
+        btn.textContent = 'Lighten';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        btn.setAttribute('class', 'light');
+    } else {
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+        btn.setAttribute('class', 'dark');
+    }
+}
+
+btn.addEventListener('click', click)
