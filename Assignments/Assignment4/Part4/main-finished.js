@@ -33,18 +33,16 @@ class Ball extends shape {
     this.color = color;
     this.size = size;
   }
-}
-Ball.prototype = Object.create(Shape.prototype);
-Ball.prototype.constructor = Ball;
 
-Ball.prototype.draw = function() {
+
+  draw() {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
 
-  Ball.prototype.update = function() {
+  update() {
     if (this.x + this.size >= width) {
       this.velX = -Math.abs(this.velX);
     }
@@ -65,7 +63,7 @@ Ball.prototype.draw = function() {
     this.y += this.velY;
   }
 
-Ball.prototype.collisionDetect = function() {
+  collisionDetect() {
     for (const ball of balls) {
       if (!(this === ball)) {
         const dx = this.x - ball.x;
@@ -75,18 +73,37 @@ Ball.prototype.collisionDetect = function() {
         if (distance < this.size + ball.size) {
           ball.color = this.color = randomRGB();
         }
-    }
+      }
     }
   }
-
-function EvilCircle(x, y, velX, velY, exists, color, size)
-{
-  shape.call(this, x, y, 20, 20, exists);
-  this.color = 'white';
-  this.size = 10;
 }
 
-EvilCircle.prototype.draw = function(){
+
+class EvilCircle extends shape {
+  constructor (x, y){
+    super (x, y, 20, 20);
+    this.color = 'white';
+    this.size = 10;
+
+    window.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "a":
+          this.x -= this.velX;
+          break;
+        case "d":
+          this.x += this.velX;
+          break;
+        case "w":
+          this.y -= this.velY;
+          break;
+        case "s":
+          this.y += this.velY;
+          break;
+      }
+    });
+  } 
+
+draw() {
   ctx.beginPath();
   ctx.strokeStyle = this.color;
   ctx.lineWidth = 3;
@@ -94,8 +111,7 @@ EvilCircle.prototype.draw = function(){
   ctx.stroke();
 };
 
-EvilCircle.prototype.checkBounds = function()
-{
+checkBounds() {
   if ((this.x + this.size) >= width)
   {
     this.x -= this.size;
@@ -114,26 +130,21 @@ EvilCircle.prototype.checkBounds = function()
   }
 }
 
-EvilCircle.prototype.setControls = function()
-{
-  let _this = this;
-  window.onkeydown = function(e){
-    if (e.key === 'a'){
-      _this.x -= _this.velX;
-    } else if (e.key === 'd'){
-      this.x += _this.velX;
-    } else if (e.key === 'w'){
-      this.y -= _this.velY;
-    } else if (e.key === 's'){
-      this.y += _this.velY
+collisionDetect (){
+  for (const ball of balls){
+    if (ball.exists) {
+      const dx = this.x - ball.x;
+      const dy = this.y - ball.y;
+      const distance = Math.sqrt (dx*dx+dy*dy);
+
+      if (distance < this.size + ball.size){
+        ball.exists = false;
+        count--;
+        parseFloat.textContent = 'Ball Count' + count;
+      }
     }
   }
 }
-
-
-
-
-
 
 const balls = [];
 
